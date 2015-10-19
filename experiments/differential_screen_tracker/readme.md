@@ -16,20 +16,6 @@
 
 若是失敗或想重新調整則按"r"。
 
-### 程式碼簡析
-
-        on = True
-        while sf.screens is None:
-            
-            on = not on
-            x = on * 255
-            screen_img = np.full(win_size, (x, x, x), np.uint8) 
-            imshow('main', screen_img)
-
-當sf.screens還未找到，
-會持續將screen_img輪流填入黑與白(x, x, x)，
-並顯示於'main'視窗，
-x將在每次輪替時變成0 或 255。
 
 
 ### 其他檔案的功能
