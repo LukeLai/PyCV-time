@@ -9,12 +9,28 @@
 
 
 我們將產生指定大小的黑白閃爍'main'視窗，
-'screen finder'視窗會持續顯示Camera的影像，
-此時Camera將會利用MotionDetector()尋找出該區域，
-並將閃爍區域分離出來(此時將停止閃爍)，
+'screen finder'視窗會持續顯示Camera的影像， 
+此時Camera將會利用MotionDetector()尋找出該區域， 
+並將閃爍區域分離出來(此時將停止閃爍)， 
 獨立顯示於'topview'視窗。
 
 若是失敗或想重新調整則按"r"。
+
+### 程式碼簡析
+
+        on = True
+        while sf.screens is None:
+            
+            on = not on
+            x = on * 255
+            screen_img = np.full(win_size, (x, x, x), np.uint8) 
+            imshow('main', screen_img)
+
+當sf.screens還未找到，
+會持續將screen_img輪流填入黑與白(x, x, x)，
+並顯示於'main'視窗，
+x將在每次輪替時變成0 或 255。
+
 
 ### 其他檔案的功能
 
