@@ -8,10 +8,13 @@
 可用於自動尋找真實空間中的ROI(Region of Interest)。
 
 
-我們將產生指定大小的黑白閃爍區域視窗，
-Camera將會利用MotionDetector()尋找出該區域，
+我們將產生指定大小的黑白閃爍'main'視窗，
+'screen finder'視窗會持續顯示Camera的影像，
+此時Camera將會利用MotionDetector()尋找出該區域，
 並將閃爍區域分離出來(此時將停止閃爍)，
 獨立顯示於'topview'視窗。
+
+若是失敗或想重新調整則按"r"。
 
 ### 其他檔案的功能
 
